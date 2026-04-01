@@ -13,3 +13,16 @@ data = {
 
 st.subheader("📊 Incoming Cloud Metrics")
 st.write(data)
+# Detection logic
+anomaly = data["cpu"] > 85
+
+if data["cpu"] > 85 and data["cost"] > 250:
+    risk = "HIGH"
+elif data["cpu"] > 70:
+    risk = "MEDIUM"
+else:
+    risk = "LOW"
+
+st.subheader("🔍 Analysis")
+st.write(f"Anomaly Detected: {anomaly}")
+st.write(f"Risk Level: {risk}")
