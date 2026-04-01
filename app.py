@@ -26,3 +26,17 @@ else:
 st.subheader("🔍 Analysis")
 st.write(f"Anomaly Detected: {anomaly}")
 st.write(f"Risk Level: {risk}")
+if anomaly and risk == "HIGH":
+    st.error("🚨 HIGH RISK DETECTED!")
+
+    st.subheader("👨‍💻 Human Decision Panel")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        if st.button("✅ Approve"):
+            st.success("Action Approved")
+
+    with col2:
+        if st.button("❌ Ignore"):
+            st.warning("Ignored by user")
