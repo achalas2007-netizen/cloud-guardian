@@ -40,3 +40,12 @@ if anomaly and risk == "HIGH":
     with col2:
         if st.button("❌ Ignore"):
             st.warning("Ignored by user")
+            efficiency = data["traffic"] / data["cost"]
+
+st.subheader("💡 Efficiency Analysis")
+st.write(f"Efficiency Score: {efficiency:.2f}")
+
+if efficiency < 3:
+    st.warning("Low efficiency → Reduce service")
+else:
+    st.success("High efficiency → Protect service")
