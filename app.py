@@ -1,9 +1,15 @@
 import streamlit as st
+import random
 
-st.title("🚀 Cloud Guardian - HITL System")
+st.title("☁️ Cloud Guardian - HITL System")
 
-st.write("If you see this, your app is working!")
+# Mock data (later replaced by Harish's data)
+data = {
+    "service": "EC2",
+    "cpu": random.randint(40, 100),
+    "cost": random.randint(100, 500),
+    "traffic": random.randint(200, 1500)
+}
 
-# Simple test button
-if st.button("Click Me"):
-    st.success("Button works!")
+st.subheader("📊 Incoming Cloud Metrics")
+st.write(data)
